@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameBoost | AI-Driven Gaming</title>
+    <style>
+        :root {
+            --primary-blue: #00d2ff;
+            --primary-purple: #9d50bb;
+            --dark-bg: #0b0e14;
+            --card-bg: #161b22;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--dark-bg); color: white; line-height: 1.6; }
+
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 5%; background: rgba(11, 14, 20, 0.95);
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            border-bottom: 1px solid #30363d;
+        }
+        .logo-text { font-size: 1.5rem; font-weight: bold; background: linear-gradient(to right, var(--primary-blue), var(--primary-purple)); -webkit-background-clip: text; color: transparent; }
+
+        section { padding: 100px 5%; text-align: center; }
+
+        /* --- VİDEO BOYUTLANDIRMA GÜNCELLEMESİ --- */
+        .video-wrapper {
+            width: 100%;
+            max-width: 350px; /* PC'de videonun devleşmesini engeller */
+            margin: 0 auto; 
+            background: #000;
+            border-radius: 20px;
+            border: 2px solid #30363d;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.2);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 177.78%; /* 9:16 Aspect Ratio */
+            height: 0;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+
+        /* Grid Sistemi */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 40px auto; }
+        
+        .card {
+            background: var(--card-bg);
+            padding: 25px; border-radius: 15px;
+            border: 1px solid #30363d;
+        }
+
+        .pdf-btn {
+            display: inline-block; margin-top: 15px;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, var(--primary-blue), var(--primary-purple));
+            color: white; text-decoration: none; border-radius: 8px;
+        }
+
+        footer { padding: 40px; border-top: 1px solid #30363d; opacity: 0.7; font-size: 0.9rem; }
+
+        /* Mobil için istisna: Mobilde biraz daha genişleyebilir */
+        @media (max-width: 480px) {
+            .video-wrapper { max-width: 90%; }
+            .logo-text { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-text">GAMEBOOST</div>
+    </nav>
+
+    <section id="tanitim">
+        <h2 style="margin-bottom: 30px;">Tanıtım Videosu</h2>
+        <div class="video-wrapper">
+            <div class="video-container">
+                <video controls poster="logo.jpg">
+                    <source src="Agent_video_Pippit_20260407160537.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <p style="margin-top: 20px; opacity: 0.8;">"Performansının sınırlarını zorla." [cite: 78]</p>
+    </section>
+
+    <section id="analiz" style="background: #0d1117;">
+        <h2>LLM Analizleri</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>ChatGPT</h3>
+                <p>Retorik yapısı güçlü ve ikna edicidir. [cite: 34, 47]</p>
+            </div>
+            <div class="card">
+                <h3>DeepSeek AI</h3>
+                <p>Teknik ve rasyonel derinlik sunar. [cite: 36, 47]</p>
+            </div>
+            <div class="card">
+                <h3>Gemini</h3>
+                <p>Hibrit kullanım senaryolarında avantajlıdır. [cite: 38, 47]</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="belgeler">
+        <h2>Akademik Raporlar</h2>
+        <div class="grid">
+            <div class="card">
+                <h4>Analiz Raporu</h4>
+                <a href="karsılastırma.pdf" class="pdf-btn" target="_blank">PDF Görüntüle</a>
+            </div>
+            <div class="card">
+                <h4>Prompt Listesi</h4>
+                <a href="promt.pdf" class="pdf-btn" target="_blank">PDF Görüntüle</a>
+            </div>
+            <div class="card">
+                <h4>Süreç Raporu</h4>
+                <a href="surec_aciklamasi.pdf" class="pdf-btn" target="_blank">PDF Görüntüle</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><b>Emirhan Özenç</b> </p>
+        <p>Sinop Ayancık Üniversitesi [cite: 29]</p>
+    </footer>
+
+</body>
+</html>
